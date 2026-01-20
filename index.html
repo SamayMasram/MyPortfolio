@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samay Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 10px;
+            color: #ffffff;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            align-items: center;
+            width: auto;
+        }
+
+        nav ul li {
+            list-style-type: none;
+            display: inline-block;
+            padding: 0;
+            margin: 5px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 13px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: none;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .firstsection {
+            display: flex;
+            flex-wrap: wrap;
+            color: #0a2e54;
+            justify-content: space-around;
+            align-items: center;
+            margin: 40px 10px;
+            gap: 20px;
+        }
+
+        .firstsection>div {
+            width: 100%;
+            max-width: 500px;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .leftsection {
+            padding: 30px;
+            font-weight: bold;
+            font-size: 32px;
+            color: #1e3c72;
+            animation: slideInLeft 0.8s ease-out forwards;
+            text-align: right;
+            padding-right: 50px;
+        }
+
+        .rightsection {
+            padding: 20px;
+            text-align: center;
+            color: #000000;
+            animation: fadeIn 0.8s ease-out 0.3s forwards;
+            opacity: 0;
+        }
+
+        .rightsection img {
+            max-width: 100%;
+            height: auto;
+            width: 100%;
+            max-height: 367px;
+        }
+
+        .title2 {
+            display: flex;
+            font-size: 32px;
+            justify-content: center;
+            color: #1e3c72;
+            font-weight: bold;
+            padding: 20px;
+            flex-wrap: wrap;
+            background: linear-gradient(to right, rgba(30, 60, 114, 0.05), rgba(42, 82, 152, 0.05));
+            border-radius: 8px;
+        }
+
+        .secondsection {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: center;
+            padding: 20px 10px;
+            gap: 20px;
+            color: #000000;
+        }
+
+        .secondsection>div {
+            min-width: 280px;
+            flex: 1;
+            max-width: 450px;
+        }
+
+        .firstproject {
+            width: 100%;
+        }
+
+        .secondproject {
+            width: 100%;
+        }
+
+        .card {
+            width: 100% !important;
+            height: 100%;
+            color: #000000;
+            transition: all 0.3s ease;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 25px rgba(30, 60, 114, 0.2), inset 0 0 15px rgba(255, 215, 0, 0.08);
+            transform: translateY(-5px);
+            border-color: #2a5298;
+        }
+
+        footer {
+            color: #ffffff;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            text-align: center;
+            padding: 8px 10px;
+            margin-top: 60px;
+        }
+
+        footer li {
+            list-style-type: none;
+            display: inline-block;
+            margin: 5px;
+        }
+
+        footer div li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        footer div li a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .foot-top {
+            padding-bottom: 0;
+            border-bottom: none;
+            margin-bottom: 0;
+            font-weight: normal;
+            font-size: 14px;
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .foot-bot {
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0;
+        }
+
+        body.dark-mode {
+            background-color: #0a0a0a;
+            color: #ffffff;
+        }
+
+        body.dark-mode nav {
+            background: linear-gradient(135deg, #0d1f36 0%, #1a3d6b 100%);
+            color: #ffffff;
+        }
+
+        body.dark-mode nav ul li a {
+            color: #ffffff;
+        }
+
+        body.dark-mode nav ul li a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        body.dark-mode .leftsection,
+        body.dark-mode .rightsection {
+            color: #ffffff;
+        }
+
+        body.dark-mode .title2 {
+            color: #ffd700;
+            background: linear-gradient(to right, rgba(30, 60, 114, 0.15), rgba(42, 82, 152, 0.15));
+        }
+
+        body.dark-mode .card {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border-color: #2a5298;
+        }
+
+        body.dark-mode .card-body {
+            color: #ffffff;
+        }
+
+        body.dark-mode footer {
+            background: linear-gradient(135deg, #0d1f36 0%, #1a3d6b 100%);
+            color: #ffffff;
+            border-top-color: transparent;
+        }
+
+        body.dark-mode .foot-top {
+            border-bottom-color: transparent;
+        }
+
+        body.dark-mode footer div li a {
+            color: #ffffff;
+        }
+
+        body.dark-mode footer div li a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        body.dark-mode .card:hover {
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.15), inset 0 0 15px rgba(255, 215, 0, 0.1);
+        }
+
+        body.dark-mode .theme-toggle {
+            border-color: #ffd700;
+            color: #ffd700;
+        }
+
+        body.dark-mode .theme-toggle:hover {
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.3);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid #1e3c72;
+            color: #1e3c72;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 12px;
+            border-radius: 5px;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background-color: rgba(30, 60, 114, 0.1);
+            color: #2a5298;
+            box-shadow: 0 0 15px rgba(30, 60, 114, 0.4), 0 0 30px rgba(30, 60, 114, 0.2);
+            text-shadow: 0 0 10px rgba(30, 60, 114, 0.3);
+            border-color: #2a5298;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 8px 5px;
+                justify-content: space-between;
+            }
+
+            nav ul li {
+                margin: 4px;
+                font-size: 11px;
+            }
+
+            .firstsection {
+                margin: 30px 5px;
+                flex-direction: column;
+            }
+
+            .leftsection {
+                font-size: 28px;
+                padding: 20px;
+                padding-right: 30px;
+                animation: slideInLeft 0.8s ease-out forwards;
+                text-align: right;
+            }
+
+            .rightsection {
+                animation: fadeIn 0.8s ease-out 0.3s forwards;
+                opacity: 0;
+            }
+
+            .title2 {
+                font-size: 28px;
+                padding: 15px;
+            }
+
+            .secondsection {
+                padding: 15px 5px;
+            }
+
+            footer {
+                padding: 8px 5px;
+                margin-top: 40px;
+            }
+
+            footer li {
+                margin: 4px;
+                font-size: 11px;
+            }
+
+            .foot-bot {
+                gap: 0;
+            }
+
+            .foot-top {
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                justify-content: space-between;
+            }
+
+            nav .left {
+                width: auto;
+                text-align: left;
+                margin-bottom: 0;
+                font-size: 11px;
+            }
+
+            nav ul li {
+                margin: 3px;
+                font-size: 10px;
+            }
+
+            .firstsection {
+                margin: 20px 5px;
+            }
+
+            .leftsection {
+                font-size: 24px;
+                padding: 15px;
+                padding-right: 20px;
+                animation: slideInLeft 0.8s ease-out forwards;
+                text-align: right;
+            }
+
+            .rightsection {
+                animation: fadeIn 0.8s ease-out 0.3s forwards;
+                opacity: 0;
+            }
+
+            .title2 {
+                font-size: 24px;
+                padding: 10px;
+            }
+
+            .secondsection {
+                padding: 10px 5px;
+            }
+
+            footer {
+                padding: 8px 5px;
+                margin-top: 30px;
+            }
+
+            footer li {
+                margin: 3px;
+                font-size: 10px;
+            }
+
+            footer div li a {
+                font-size: 10px;
+            }
+
+            .foot-top {
+                font-size: 10px;
+            }
+
+            .foot-bot {
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">
+                <p>Samay's Portfolio</p>
+            </div>
+            <ul>
+                <div class="right">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="">Sevices</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="#con">Contact</a></li>
+                    <li><button class="theme-toggle" onclick="toggleTheme()">🌙</button></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="firstsection">
+            <div class="leftsection">Hi, I am Samay
+                <div>and I am a</div>
+                <div>Passionate Java Developer</div>
+            </div>
+            <div class="rightsection">
+                <img src="dev1.png" alt="Java Developer">
+            </div>
+        </section>
+
+        <p id="proj" class="title2">Projects</p>
+        <section class="secondsection">
+            <div class="firstproject">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">RemindDose</h4>
+                        <p class="card-text">A Desktop-based Medicine Management System to efficiently manage medication built using Java+Swing
+                        </p>
+                        <a href="projects.html" class="btn btn-primary">See in Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="secondproject">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Tea Disector</h4>
+                        <p class="card-text">A Smart Web-application which predict Tea Leaf Disease based on image uploaded built using Python
+                        </p>
+                        <a href="projects.html" class="btn btn-primary">See in Detail</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="foot-top" id="con">
+            <li><a>Samay | Java Developer</a></li>
+        </div>
+        <div class="foot-bot">
+            <li><a href="https://linkedin.com/in/samay-masram-827056320">LinkedIn</a></li>
+            <li><a href="https://github.com/SamayMasram">GitHub</a></li>
+            <li><a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSHxjdHpksRRJxBvgMVKlxTkBpljFsXFLXNTwrpbbmmrdBLfdkQCZgmJGRkQpWJswlBKVJPB">Gmail</a></li>
+        </div>
+    </footer>
+
+    <script>
+        // Check for saved theme preference or default to light mode
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.querySelector('.theme-toggle').textContent = '☀️';
+            }
+        }
+
+        // Toggle theme function
+        function toggleTheme() {
+            const isDarkMode = document.body.classList.toggle('dark-mode');
+            const button = document.querySelector('.theme-toggle');
+            button.textContent = isDarkMode ? '☀️' : '🌙';
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        }
+
+        // Initialize theme on page load
+        window.addEventListener('load', initTheme);
+    </script>
+
+</body>
+
+</html>
