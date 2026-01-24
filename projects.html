@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Samay Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 10px;
+            color: #ffffff;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            align-items: center;
+            width: auto;
+        }
+
+        nav ul li {
+            list-style-type: none;
+            display: inline-block;
+            padding: 0;
+            margin: 5px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 13px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: none;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .title2 {
+            display: flex;
+            font-size: 32px;
+            justify-content: center;
+            color: #1e3c72;
+            font-weight: bold;
+            padding: 20px;
+            flex-wrap: wrap;
+            background: linear-gradient(to right, rgba(30, 60, 114, 0.05), rgba(42, 82, 152, 0.05));
+            border-radius: 8px;
+            margin: 40px 10px 20px 10px;
+        }
+
+        .projlist {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px 10px;
+        }
+
+        .projlist>div {
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .card {
+            width: 100% !important;
+            color: #000000;
+            transition: all 0.3s ease;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 25px rgba(30, 60, 114, 0.2), inset 0 0 15px rgba(255, 215, 0, 0.08);
+            transform: translateY(-5px);
+            border-color: #2a5298;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            color: #1e3c72;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .card-text {
+            color: #333333;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        footer {
+            color: #ffffff;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            text-align: center;
+            padding: 8px 10px;
+            margin-top: 60px;
+        }
+
+        footer li {
+            list-style-type: none;
+            display: inline-block;
+            margin: 5px;
+        }
+
+        footer div li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        footer div li a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .foot-top {
+            padding-bottom: 0;
+            border-bottom: none;
+            margin-bottom: 0;
+            font-weight: normal;
+            font-size: 14px;
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .foot-bot {
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0;
+        }
+
+        body.dark-mode {
+            background-color: #0a0a0a;
+            color: #ffffff;
+        }
+
+        body.dark-mode nav {
+            background: linear-gradient(135deg, #0d1f36 0%, #1a3d6b 100%);
+            color: #ffffff;
+        }
+
+        body.dark-mode nav ul li a {
+            color: #ffffff;
+        }
+
+        body.dark-mode nav ul li a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        body.dark-mode .title2 {
+            color: #ffd700;
+            background: linear-gradient(to right, rgba(30, 60, 114, 0.15), rgba(42, 82, 152, 0.15));
+        }
+
+        body.dark-mode .card {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border-color: #2a5298;
+        }
+
+        body.dark-mode .card-title {
+            color: #ffd700;
+        }
+
+        body.dark-mode .card-text {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode footer {
+            background: linear-gradient(135deg, #0d1f36 0%, #1a3d6b 100%);
+            color: #ffffff;
+        }
+
+        body.dark-mode footer div li a {
+            color: #ffffff;
+        }
+
+        body.dark-mode footer div li a:hover {
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        body.dark-mode .card:hover {
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.15), inset 0 0 15px rgba(255, 215, 0, 0.1);
+        }
+
+        body.dark-mode .theme-toggle {
+            border-color: #ffd700;
+            color: #ffd700;
+        }
+
+        body.dark-mode .theme-toggle:hover {
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.3);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid #1e3c72;
+            color: #1e3c72;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 12px;
+            border-radius: 5px;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background-color: rgba(30, 60, 114, 0.1);
+            color: #2a5298;
+            box-shadow: 0 0 15px rgba(30, 60, 114, 0.4), 0 0 30px rgba(30, 60, 114, 0.2);
+            text-shadow: 0 0 10px rgba(30, 60, 114, 0.3);
+            border-color: #2a5298;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .carousel-inner {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .carousel-item {
+            display: none;
+            text-align: center;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 40px;
+            color: #ffffff;
+            min-height: 150px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .carousel-item.active {
+            display: block;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+
+        .carousel-control:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .carousel-control.prev {
+            left: 10px;
+        }
+
+        .carousel-control.next {
+            right: 10px;
+        }
+
+        .carousel-dots {
+            text-align: center;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #2a5298;
+        }
+
+        body.dark-mode .carousel-item {
+            background: linear-gradient(135deg, #0d1f36 0%, #1a3d6b 100%);
+        }
+
+        body.dark-mode .carousel-dots {
+            background-color: #1a1a1a;
+        }
+
+        body.dark-mode .dot {
+            background-color: #555;
+        }
+
+        body.dark-mode .dot.active {
+            background-color: #ffd700;
+        }
+
+        .image-carousel-container {
+            position: relative;
+            width: 100%;
+            background-color: #f0f0f0;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .image-carousel-inner {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-carousel-item {
+            display: none;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .image-carousel-item.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-carousel-item img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .image-carousel-item.no-image {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #ffffff;
+            font-size: 18px;
+        }
+
+        .image-carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            z-index: 10;
+        }
+
+        .image-carousel-control:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .image-carousel-control.prev {
+            left: 10px;
+        }
+
+        .image-carousel-control.next {
+            right: 10px;
+        }
+
+        .image-carousel-indicators {
+            text-align: center;
+            padding: 10px;
+            background-color: #ffffff;
+        }
+
+        .indicator {
+            height: 10px;
+            width: 10px;
+            margin: 0 4px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .indicator.active {
+            background-color: #2a5298;
+        }
+
+        body.dark-mode .image-carousel-inner {
+            background-color: #1a1a1a;
+        }
+
+        body.dark-mode .image-carousel-item.no-image {
+            background: linear-gradient(135deg, #0d1f36 0%, #1a3d6b 100%);
+        }
+
+        body.dark-mode .image-carousel-indicators {
+            background-color: #1a1a1a;
+        }
+
+        body.dark-mode .indicator {
+            background-color: #555;
+        }
+
+        body.dark-mode .indicator.active {
+            background-color: #ffd700;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 8px 5px;
+                justify-content: space-between;
+            }
+
+            nav ul li {
+                margin: 4px;
+                font-size: 11px;
+            }
+
+            .title2 {
+                font-size: 28px;
+                padding: 15px;
+                margin: 30px 5px 15px 5px;
+            }
+
+            .projlist {
+                padding: 15px 5px;
+                gap: 20px;
+            }
+
+            .projlist>div {
+                max-width: 100%;
+            }
+
+            footer {
+                padding: 8px 5px;
+                margin-top: 40px;
+            }
+
+            footer li {
+                margin: 4px;
+                font-size: 11px;
+            }
+
+            .foot-top {
+                display: block;
+                margin-bottom: 5px;
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                justify-content: space-between;
+                padding: 8px 5px;
+            }
+
+            nav .left {
+                width: auto;
+                text-align: left;
+                margin-bottom: 0;
+                font-size: 11px;
+            }
+
+            nav ul li {
+                margin: 3px;
+                font-size: 10px;
+            }
+
+            .title2 {
+                font-size: 24px;
+                padding: 10px;
+                margin: 20px 5px 10px 5px;
+            }
+
+            .projlist {
+                padding: 10px 5px;
+                gap: 15px;
+            }
+
+            .card-body {
+                padding: 15px;
+            }
+
+            .card-title {
+                font-size: 18px;
+            }
+
+            .card-text {
+                font-size: 14px;
+            }
+
+            footer {
+                padding: 8px 5px;
+                margin-top: 30px;
+            }
+
+            footer li {
+                margin: 3px;
+                font-size: 10px;
+            }
+
+            footer div li a {
+                font-size: 10px;
+            }
+
+            .foot-top {
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">
+                <p>Samay's Portfolio</p>
+            </div>
+            <ul>
+                <div class="right">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="">Sevices</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><button class="theme-toggle" onclick="toggleTheme()">🌙</button></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <p id="projects" class="title2">Projects</p>
+        <div class="projlist">
+            <div class="firstproject">
+                <div class="card">
+                    <div class="carousel-container">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <h5>Project Overview</h5>
+                                <p>Smart Medicine Management System</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h5>Technology Stack</h5>
+                                <p>Java + Swing, Desktop Application</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h5>Key Features</h5>
+                                <p>Medicine Tracking, Reminders, Expiry Alerts</p>
+                            </div>
+                        </div>
+                        <button class="carousel-control prev" onclick="changeSlide('firstproject', -1)">❮</button>
+                        <button class="carousel-control next" onclick="changeSlide('firstproject', 1)">❯</button>
+                    </div>
+                    <div class="carousel-dots">
+                        <span class="dot active" onclick="currentSlide('firstproject', 0)"></span>
+                        <span class="dot" onclick="currentSlide('firstproject', 1)"></span>
+                        <span class="dot" onclick="currentSlide('firstproject', 2)"></span>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">RemindDose</h4>
+                        <p class="card-text">The Smart Medicine Management System is a vital, user-centric application
+                            designed to help individuals efficiently manage their medications and daily schedules. It
+                            addresses common issues in modern life, where difficulty in tracking intake often leads to
+                            harmful missed doses or the consumption of expired drugs. The system functions as a virtual
+                            medicine box , allowing users to categorize, organize, and monitor all their prescriptions
+                            through a simple, intuitive interface. Its primary function is to provide automated
+                            reminders for timely intake and proactive smart notifications that alert users about
+                            impending expiry dates. Core features include detailed
+                            medicine sorting, highly customizable dose reminders, and reliable expiry date tracking to
+                            prevent health risks associated with outdated medicine. Operating completely
+                            independently—without requiring doctor interaction—the system focuses
+                            entirely on boosting user adherence and management efficiency. Its availability as a web
+                            application ensures broad accessibility and user convenience across computing devices.This
+                            is a new system being developed to address the common problem of individuals forgetting to
+                            take medications on time and failing to track expiry dates, for which existing solutions are
+                            either too complex or not tailored for Indian users. The system will provide a feature to
+                            categorize medicines virtually, similar to compartments in a physical box.</p>
+                    </div>
+                    <div class="image-carousel-container">
+                        <div class="image-carousel-inner">
+                            <div class="image-carousel-item active no-image">
+                                <img src="first_pro/fst1.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="first_pro/fst2.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="first_pro/fst3.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="first_pro/fst4.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="first_pro/fst5.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="first_pro/fst6.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="first_pro/fst7.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="first_pro/fst8.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="first_pro/fst9.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="first_pro/fst10.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="first_pro/fst11.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="first_pro/fst12.png">
+                            </div>
+                        </div>
+                        <button class="image-carousel-control prev"
+                            onclick="changeImageSlide('firstproject', -1)">❮</button>
+                        <button class="image-carousel-control next"
+                            onclick="changeImageSlide('firstproject', 1)">❯</button>
+                    </div>
+                    <div class="image-carousel-indicators">
+                        <span class="indicator active" onclick="currentImageSlide('firstproject', 0)"></span>
+                        <span class="indicator" onclick="currentImageSlide('firstproject', 1)"></span>
+                        <span class="indicator" onclick="currentImageSlide('firstproject', 2)"></span>
+                        <span class="indicator" onclick="currentImageSlide('firstproject', 3)"></span>
+                        <span class="indicator" onclick="currentImageSlide('firstproject', 4)"></span>
+                        <span class="indicator" onclick="currentImageSlide('firstproject', 5)"></span>
+                        <span class="indicator" onclick="currentImageSlide('firstproject', 6)"></span>
+                        <span class="indicator" onclick="currentImageSlide('firstproject', 7)"></span>
+                        <span class="indicator" onclick="currentImageSlide('firstproject', 8)"></span>
+                        <span class="indicator" onclick="currentImageSlide('firstproject', 9)"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="secondproject">
+                <div class="card">
+                    <div class="carousel-container">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <h5>Project Overview</h5>
+                                <p>Tea Leaf Disease Detection</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h5>Technology Stack</h5>
+                                <p>Python, Deep Learning, CNN Model</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h5>Accuracy</h5>
+                                <p>76.06% Validation Accuracy</p>
+                            </div>
+                        </div>
+                        <button class="carousel-control prev" onclick="changeSlide('secondproject', -1)">❮</button>
+                        <button class="carousel-control next" onclick="changeSlide('secondproject', 1)">❯</button>
+                    </div>
+                    <div class="carousel-dots">
+                        <span class="dot active" onclick="currentSlide('secondproject', 0)"></span>
+                        <span class="dot" onclick="currentSlide('secondproject', 1)"></span>
+                        <span class="dot" onclick="currentSlide('secondproject', 2)"></span>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Tea Disector</h4>
+                        <p class="card-text">This Project focuses on developing a deep learning-based system for the
+                            automatic detection and classification of diseases affecting tea leaves, which is crucial
+                            for effective intervention and sustainable farming. Traditional disease diagnosis relies on
+                            time-consuming and subjective visual inspection by agricultural experts. The core of the
+                            system is a Convolutional Neural Network (CNN) model, which has proven highly effective in
+                            image classification tasks. The model was trained using a publicly available dataset from
+                            Kaggle, titled "Identifying Disease in Tea Leafs." This dataset comprises images of tea
+                            leaves belonging to eight distinct categories: Healthy leaves Seven specific disease types:
+                            Red Leaf Spot, Algal Leaf Spot, Bird's Eye Spot, Brown Blight, Gray Blight, White Spot, and
+                            Anthracnose. The proposed CNN model achieved a peak validation accuracy of approximately
+                            76.06%, demonstrating a consistent learning progression. The system performed robustly in
+                            distinguishing between most disease types. However, the study noted ongoing challenges in
+                            accurately classifying conditions that are visually very similar, specifically Brown Blight
+                            and Gray Blight. The practical utility of this research is realized through a real-time
+                            prediction module. This allows users (like farmers or experts) to upload an image of a tea
+                            leaf and receive an instant disease diagnosis, thus streamlining the monitoring process for
+                            large-scale tea production.
+                        </p>
+                    </div>
+                    <div class="image-carousel-container">
+                        <div class="image-carousel-inner">
+                            <div class="image-carousel-item active no-image">
+                                <img src="second_pro/sec1.png" alt="Dashboard">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="second_pro/sec2.png" alt="Input_image">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="second_pro/sec3.png" alt="Result">
+                            </div>
+                        </div>
+                        <button class="image-carousel-control prev"
+                            onclick="changeImageSlide('secondproject', -1)">❮</button>
+                        <button class="image-carousel-control next"
+                            onclick="changeImageSlide('secondproject', 1)">❯</button>
+                    </div>
+                    <div class="image-carousel-indicators">
+                        <span class="indicator active" onclick="currentImageSlide('secondproject', 0)"></span>
+                        <span class="indicator" onclick="currentImageSlide('secondproject', 1)"></span>
+                        <span class="indicator" onclick="currentImageSlide('secondproject', 2)"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="thirdproject">
+                <div class="card">
+                    <div class="carousel-container">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <h5>Project Overview</h5>
+                                <p>Semi-automatic Embedded System Project</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h5>Technology Stack</h5>
+                                <p>Arduino Uno, HC-05 Bluetooth Module, Relay Module, L298N Motor Driver</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h5>Resources</h5>
+                                <p><a
+                                        href="https://drive.google.com/drive/folders/1Y_TOwuGTrAZAbfYy1zpZJr9cRhA4djMB?usp=drive_link">Drive</a>
+                                </p>
+                            </div>
+                        </div>
+                        <button class="carousel-control prev" onclick="changeSlide('thirdproject', -1)">❮</button>
+                        <button class="carousel-control next" onclick="changeSlide('thirdproject', 1)">❯</button>
+                    </div>
+                    <div class="carousel-dots">
+                        <span class="dot active" onclick="currentSlide('thirdproject', 0)"></span>
+                        <span class="dot" onclick="currentSlide('thirdproject', 1)"></span>
+                        <span class="dot" onclick="currentSlide('thirdproject', 2)"></span>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Semi-automatic System for Home</h4>
+                        <p class="card-text">This semi-automatic embedded system project utilizes an Arduino Uno as the
+                            central microcontroller to manage the remote control of an LED and a DC fan via Bluetooth.
+                            The system integrates an HC-05 Bluetooth module to receive commands wirelessly from a user's
+                            smartphone or PC. Upon receiving specific single-digit commands (e.g., '1', '2', '3', '4'),
+                            the Arduino processes the input. The relay module acts as an electrically operated switch,
+                            controlled by the Arduino, to power on or off the high-voltage/current LED circuit.
+                            Simultaneously, an L298N motor driver is used to control the speed and direction of the DC
+                            fan, although in this context, it will likely be used for simple on/off control of the fan
+                            (or to set a single speed). A portable battery powers the entire system, ensuring autonomous
+                            operation. The project demonstrates a basic home automation concept where numbers '1' and
+                            '2' could correspond to starting/stopping the LED, and '3' and '4' could control the fan
+                            motor, providing a foundational platform for more complex, remotely operated embedded
+                            applications.
+
+                        </p>
+                    </div>
+                    <div class="image-carousel-container">
+                        <div class="image-carousel-inner">
+                            <div class="image-carousel-item active no-image">
+                                <img src="third_pro/img01.jpeg" alt="Project Image 1">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="third_pro/img02.jpeg" alt="Project Image 2">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="third_pro/circuitdia.png" alt="Project Image 3">
+                            </div>
+                        </div>
+                        <button class="image-carousel-control prev"
+                            onclick="changeImageSlide('thirdproject', -1)">❮</button>
+                        <button class="image-carousel-control next"
+                            onclick="changeImageSlide('thirdproject', 1)">❯</button>
+                    </div>
+                    <div class="image-carousel-indicators">
+                        <span class="indicator active" onclick="currentImageSlide('thirdproject', 0)"></span>
+                        <span class="indicator" onclick="currentImageSlide('thirdproject', 1)"></span>
+                        <span class="indicator" onclick="currentImageSlide('thirdproject', 2)"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="fourthproject">
+                <div class="card">
+                    <div class="carousel-container">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <h5>Project Overview</h5>
+                                <p>Quiz Management System</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h5>Technology Stack</h5>
+                                <p>Java(SE), JSP-Servlet, MVC, MySQL(JDBC), JavaScript</p>
+                            </div>
+                            <div class="carousel-item">
+                                <h5>Key Features</h5>
+                                <p>Responsive UI, Interactivity, Deployment</p>
+                            </div>
+                        </div>
+                        <button class="carousel-control prev" onclick="changeSlide('fourthproject', -1)">❮</button>
+                        <button class="carousel-control next" onclick="changeSlide('fourthproject', 1)">❯</button>
+                    </div>
+                    <div class="carousel-dots">
+                        <span class="dot active" onclick="currentSlide('fourthproject', 0)"></span>
+                        <span class="dot" onclick="currentSlide('fourthproject', 1)"></span>
+                        <span class="dot" onclick="currentSlide('fourthproject', 2)"></span>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Quiz Management System</h4>
+                        <p class="card-text">The Quiz Management System highlights my ability to engineer a dual-interface application
+                            using Java SE and MySQL, providing both a console-based and a web-based GUI environment. I
+                            implemented a Layered Architecture—incorporating Model, DAO, Utility, and JSP layers—to
+                            separate business logic from the presentation layer, ensuring the system is highly portable
+                            and scalable. To manage data efficiently, I utilized the Java Collections Framework,
+                            employing to prevent duplicate quizzes, LinkedList to maintain chronological attempt
+                            records, and enforce a strict one-attempt-per-student policy. Security and robustness were prioritized by using JDBC PreparedStatements to prevent SQL
+                            injection and Additionally, the system features automated file parsing for
+                            importing questions from .txt files, Serialization for offline metadata backups, and
+                            rigorous validation for user credentials and email formats. The project demonstrates strong
+                            command over OOP principles such as Encapsulation and Polymorphism, as well as event-driven
+                            programming within the MVC-compliant GUI.
+                        </p>
+                    </div>
+                    <div class="image-carousel-container">
+                        <div class="image-carousel-inner">
+                            <div class="image-carousel-item active no-image">
+                                <img src="forth_pro/f1.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="forth_pro/f2.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="forth_pro/f3.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="forth_pro/f4.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="forth_pro/f5.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="forth_pro/f6.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="forth_pro/f7.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="forth_pro/f8.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="forth_pro/f9.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="forth_pro/f10.png">
+                            </div>
+                            <div class="image-carousel-item no-image">
+                                <img src="forth_pro/f11.png">
+                            </div>
+                        </div>
+                        <button class="image-carousel-control prev"
+                            onclick="changeImageSlide('fourthproject', -1)">❮</button>
+                        <button class="image-carousel-control next"
+                            onclick="changeImageSlide('fourthproject', 1)">❯</button>
+                    </div>
+                    <div class="image-carousel-indicators">
+                        <span class="indicator active" onclick="currentImageSlide('fproject', 0)"></span>
+                        <span class="indicator" onclick="currentImageSlide('fproject', 1)"></span>
+                        <span class="indicator" onclick="currentImageSlide('fproject', 2)"></span>
+                        <span class="indicator" onclick="currentImageSlide('fproject', 3)"></span>
+                        <span class="indicator" onclick="currentImageSlide('fproject', 4)"></span>
+                        <span class="indicator" onclick="currentImageSlide('fproject', 5)"></span>
+                        <span class="indicator" onclick="currentImageSlide('fproject', 6)"></span>
+                        <span class="indicator" onclick="currentImageSlide('fproject', 7)"></span>
+                        <span class="indicator" onclick="currentImageSlide('fproject', 8)"></span>
+                        <span class="indicator" onclick="currentImageSlide('fproject', 9)"></span>
+                        <span class="indicator" onclick="currentImageSlide('fproject', 10)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="foot-top">
+            <li><a>Samay | Java Developer</a></li>
+        </div>
+        <div class="foot-bot">
+            <li><a href="https://linkedin.com/in/samay-masram-827056320">LinkedIn</a></li>
+            <li><a href="https://github.com/SamayMasram">GitHub</a></li>
+            <li><a
+                    href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSHxjdHpksRRJxBvgMVKlxTkBpljFsXFLXNTwrpbbmmrdBLfdkQCZgmJGRkQpWJswlBKVJPB">Gmail</a>
+            </li>
+        </div>
+    </footer>
+
+    <script>
+        // Check for saved theme preference or default to light mode
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                document.querySelector('.theme-toggle').textContent = '☀️';
+            }
+        }
+
+        // Toggle theme function
+        function toggleTheme() {
+            const isDarkMode = document.body.classList.toggle('dark-mode');
+            const button = document.querySelector('.theme-toggle');
+            button.textContent = isDarkMode ? '☀️' : '🌙';
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        }
+
+        // Initialize theme on page load
+        window.addEventListener('load', initTheme);
+
+        // Carousel functionality
+        function changeSlide(projectClass, direction) {
+            const items = document.querySelectorAll(`.${projectClass} .carousel-item`);
+            let currentIndex = Array.from(items).findIndex(item => item.classList.contains('active'));
+            items[currentIndex].classList.remove('active');
+
+            currentIndex = (currentIndex + direction + items.length) % items.length;
+            items[currentIndex].classList.add('active');
+
+            updateDots(projectClass, currentIndex);
+        }
+
+        function currentSlide(projectClass, index) {
+            const items = document.querySelectorAll(`.${projectClass} .carousel-item`);
+            items.forEach(item => item.classList.remove('active'));
+            items[index].classList.add('active');
+            updateDots(projectClass, index);
+        }
+
+        function updateDots(projectClass, activeIndex) {
+            const dots = document.querySelectorAll(`.${projectClass} .dot`);
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === activeIndex);
+            });
+        }
+
+        // Image Carousel functionality
+        function changeImageSlide(projectClass, direction) {
+            const items = document.querySelectorAll(`.${projectClass} .image-carousel-item`);
+            let currentIndex = Array.from(items).findIndex(item => item.classList.contains('active'));
+            items[currentIndex].classList.remove('active');
+
+            currentIndex = (currentIndex + direction + items.length) % items.length;
+            items[currentIndex].classList.add('active');
+
+            updateImageIndicators(projectClass, currentIndex);
+        }
+
+        function currentImageSlide(projectClass, index) {
+            const items = document.querySelectorAll(`.${projectClass} .image-carousel-item`);
+            items.forEach(item => item.classList.remove('active'));
+            items[index].classList.add('active');
+            updateImageIndicators(projectClass, index);
+        }
+
+        function updateImageIndicators(projectClass, activeIndex) {
+            const indicators = document.querySelectorAll(`.${projectClass} .indicator`);
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === activeIndex);
+            });
+        }
+    </script>
+
+</body>
+
+</html>
